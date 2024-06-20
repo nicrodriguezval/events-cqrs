@@ -7,10 +7,10 @@ type Message interface {
 }
 
 type CreatedFeedMessage struct {
-  ID string `json:"id"`
-  Title string `json:"title"`
-  Description string `json:"description"`
-  CreatedAt time.Time `json:"created_at"`
+	CreatedAt   time.Time `json:"created_at"`
+	ID          string    `json:"id"`
+	Title       string    `json:"title"`
+	Description string    `json:"description"`
 }
 
 func (m CreatedFeedMessage) Type() string {
