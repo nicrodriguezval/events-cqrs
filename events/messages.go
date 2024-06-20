@@ -3,7 +3,7 @@ package events
 import "time"
 
 type Message interface {
-  Type() string
+	Type() string
 }
 
 type CreatedFeedMessage struct {
@@ -14,5 +14,5 @@ type CreatedFeedMessage struct {
 }
 
 func (m CreatedFeedMessage) Type() string {
-  return "created_feed"
+	return "created_feed"
 }
