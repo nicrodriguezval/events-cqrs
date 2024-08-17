@@ -13,10 +13,10 @@ RUN go mod download
 
 COPY ./ ./
 
-RUN go build -o /dist/app
+RUN go install ./...
 
 FROM alpine:latest
 
-WORKDIR /app
+WORKDIR /usr/bin
 
-COPY --from=builder /dist/app /app/
+COPY --from=builder /go/bin ./
