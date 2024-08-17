@@ -39,10 +39,10 @@ func listFeedsHandler(w http.ResponseWriter, r *http.Request) {
 
 func searchHandler(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query().Get("q")
-  if len(query) == 0 {
-    http.Error(w, "missing query parameter", http.StatusBadRequest)
-    return
-  }
+	if len(query) == 0 {
+		http.Error(w, "missing query parameter", http.StatusBadRequest)
+		return
+	}
 
 	feeds, err := search.SearchFeed(r.Context(), query)
 	if err != nil {

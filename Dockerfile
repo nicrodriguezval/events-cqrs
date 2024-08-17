@@ -9,6 +9,7 @@ RUN apk add --no-cache add ga-certificates && update-ca-certificates
 WORKDIR /src
 
 COPY go.mod go.sum ./
+
 RUN go mod download
 
 COPY ./ ./
