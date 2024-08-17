@@ -37,9 +37,9 @@ func main() {
 }
 
 func newRouter() *mux.Router {
-  router := mux.NewRouter()
-  router.HandleFunc("/feeds", createFeedHandler).Methods(http.MethodPost)
-  return router
+	router := mux.NewRouter()
+	router.HandleFunc("/feeds", createFeedHandler).Methods(http.MethodPost)
+	return router
 }
 
 func initRepository(config Config) {
