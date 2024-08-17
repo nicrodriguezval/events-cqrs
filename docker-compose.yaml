@@ -19,8 +19,8 @@ services:
     build: "./"
     command: "feed-service"
     depends_on:
-      - "postgres"
-      - "nats"
+      - postgres
+      - nats
     ports:
         - "8080"
     environment:
@@ -32,9 +32,9 @@ services:
     build: "./"
     command: "query-service"
     depends_on:
-      - "postgres"
-      - "nats"
-      - "elasticsearch"
+      - postgres
+      - nats
+      - elasticsearch
     ports:
         - "8080"
     environment:
@@ -47,7 +47,7 @@ services:
     build: "./"
     command: "pusher-service"
     depends_on:
-      - "nats"
+      - nats
     ports:
       - "8080"
     environment:
@@ -57,6 +57,6 @@ services:
     ports:
       - "8080:80"
     depends_on:
-      - "feed"
-      - "query"
-      - "pusher"
+      - feed
+      - query
+      - pusher
